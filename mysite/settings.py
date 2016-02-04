@@ -130,7 +130,7 @@ CKEDITOR_CONFIGS = {
             ['Image']
             ],
         'height': 500,
-        'width': 730,
+        'width': 900,
         'removePlugins': 'stylesheetparser',
         'extraPlugins': 'codesnippet',
     }
