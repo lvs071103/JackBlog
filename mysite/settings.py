@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'blog',
+    'ckeditor',
+    'ckeditor_uploader',
 )
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
@@ -105,3 +107,31 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
 )
+
+CKEDITOR_JQUERY_URL = 'http://www.0550go.com/django_css/js/jquery.min.js'
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images').replace('\\','/')
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar':[
+            ['CodeSnippet', 'Source','RemoveFormat'],
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['Image']
+            ],
+        'height': 500,
+        'width': 730,
+        'removePlugins': 'stylesheetparser',
+        'extraPlugins': 'codesnippet',
+    }
+}
