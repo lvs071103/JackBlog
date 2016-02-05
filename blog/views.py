@@ -37,3 +37,18 @@ def home(request):
 
 def AboutMe(request):
     return render(request, 'about_me.html')
+
+
+def archives(request):
+    try:
+        post_list = Blog.objects.all()
+    except Blog.DoesNotExist:
+        raise Http404
+    return render(request, 'archives.html', {'post_list': post_list, 'error': False})
+
+def search_tag(request, tags):
+    try:
+        post_list = Blog.objects.filter(category__iexact=tags)
+    except Blog.DoesNotExist:
+        raise Http404
+    return render(request, 'tags.html', {'post_list': post_list})
