@@ -10,8 +10,9 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'blog.views.home'),
-    url(r'^(?P<my_args>\d+)/$', 'blog.views.detail', name='detail'),
+    url(r'^(?P<id>\d+)/$', 'blog.views.page_detail', name='page_detail'),
     url(r'^test/$', 'blog.views.test'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^about', 'blog.views.AboutMe', name='AboutMe'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -40,7 +40,7 @@ h3 {
 
 .brand-title,
 .brand-tagline {
-    margin: 0;
+    margin: 2;
 }
 .brand-title {
     text-transform: uppercase;
@@ -163,8 +163,8 @@ h3 {
     }
 
     .header {
-        margin: 80% 2em 0;
-        text-align: right;
+        margin: 50% 2em 0;
+        text-align: center;
     }
 
     .sidebar {
